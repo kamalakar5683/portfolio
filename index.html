@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Kamalakar Majji showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Kamalakar Majji, Portfolio, Data Science, Blockchain, Web Development">
+    <meta name="author" content="Kamalakar Majji">
+    <title>Kamalakar Majji - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #1b1b1b;
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1E90FF; /* Blue color for hover */
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(27, 27, 27, 0.9);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(27, 27, 27, 1);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background: #1E90FF; /* Blue color for hover */
+            color: #1b1b1b;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #1E90FF, #20B2AA); /* Stunning gradient */
+            color: #fff;
+            text-align: center;
+            padding: 180px 20px;
+            position: relative;
+            overflow: hidden;
+            background-size: 300% 300%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        header .cta-button {
+            display: inline-block;
+            background: #1E90FF; /* Button color */
+            color: #1b1b1b;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header .cta-button:hover {
+            transform: translateY(-5px);
+            background: #20B2AA; /* Hover color */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.8));
+            z-index: 0;
+        }
+
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Titles */
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #1E90FF; /* Blue color for section titles */
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #252525, #333333); /* Subtle gradient */
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1B1B1B, #444444); /* Gradient for skills section */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #skills li {
+            background: #333;
+            color: #1E90FF; /* Blue color for skill items */
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #skills li:hover {
+            transform: translateY(-5px);
+            background: #1E90FF;
+            color: #1b1b1b;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #252525, #525252); /* Gradient for projects section */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-item {
+            background: #333;
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-item h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #1E90FF; /* Blue color for project titles */
+            padding: 0 15px;
+        }
+
+        .project-item p {
+            color: #b0b0b0;
+            font-size: 1rem;
+            padding: 0 15px 20px;
+        }
+
+        .project-item ul {
+            list-style: disc;
+            margin-left: 18px;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #252525, #666666); /* Gradient for contact section */
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1E90FF; /* Blue color for section title */
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #b0b0b0;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        #contact form input,
+        #contact form textarea {
+            background: #252525;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        #contact form input:focus,
+        #contact form textarea:focus {
+            background: #1E90FF;
+            border-color: #1E90FF;
+        }
+
+        #contact form button {
+            background: #1E90FF;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact form button:hover {
+            transform: translateY(-5px);
+            background: #20B2AA; /* Teal hover color */
+        }
+
+        /* Footer Section */
+        footer {
+            background: #252525;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #1E90FF;
+        }
+
+        footer a:hover {
+            color: #20B2AA;
+        }
+
+        .svg-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            header .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            #skills ul {
+                gap: 10px;
+            }
+
+            #projects .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KM</div>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="content">
+            <h1>Kamalakar Majji</h1>
+            <p>Intern @ Innomatics | Data Science | Blockchain Enthusiast</p>
+            <a href="#contact" class="cta-button">Connect with Me</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a data science enthusiast passionate about blockchain and emerging technologies. My goal is to create innovative solutions that blend creativity with cutting-edge technology.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><img src="https://via.placeholder.com/24" alt="Machine Learning"> Machine Learning</li>
+            <li><img src="https://via.placeholder.com/24" alt="Data Analysis"> Data Analysis</li>
+            <li><img src="https://via.placeholder.com/24" alt="Blockchain"> Blockchain</li>
+            <li><img src="https://via.placeholder.com/24" alt="Python"> Python</li>
+            <li><img src="https://via.placeholder.com/24" alt="Generative AI"> Generative AI</li>
+            <li><img src="https://via.placeholder.com/24" alt="Web Development"> Web Development</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="Django Application">
+                <h3>Django Application</h3>
+                <p>Developed a scalable web application using Django and SQL databases.</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="Hyperledger Blockchain">
+                <h3>Hyperledger Blockchain</h3>
+                <p>Created a private blockchain network with Hyperledger Besu.</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="Generative AI">
+                <h3>Generative AI</h3>
+                <p>Worked on language models to build interactive chatbots.</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="AI-Powered Image Description & Speech Conversion App">
+                <h3>AI-Powered Image Description & Speech Conversion App</h3>
+                
+                <p>An AI-powered web app that provides image descriptions and converts extracted text to speech for visually impaired users..</p>
+            </div>
+            <div class="project-item">
+                <img src="https://via.placeholder.com/300x200" alt="AI-Powered Code Review Assistant">
+                <h3>AI-Powered Code Review Assistant</h3>
+                <p>An AI-powered code review assistant that analyzes code for bugs, optimizations, and improvements in multiple programming languages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch or collaborate, feel free to reach out using the form below.</p>
+        <form action="https://formspree.io/f/{form_id}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Kamalakar Majji | <a href="mailto:kamalakar@example.com">kamalakar@example.com</a></p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/kamalakarmajji" target="_blank">LinkedIn</a> and <a href="https://github.com/kamalakarmajji" target="_blank">GitHub</a>.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
