@@ -33,7 +33,7 @@
         }
 
         a:hover {
-            color: #1E90FF;
+            color: #1E90FF; /* Blue color for hover */
         }
 
         /* Navigation Bar */
@@ -77,13 +77,13 @@
         }
 
         nav ul li a:hover {
-            background: #1E90FF;
+            background: #1E90FF; /* Blue color for hover */
             color: #1b1b1b;
         }
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #1E90FF, #20B2AA);
+            background: linear-gradient(135deg, #1E90FF, #20B2AA); /* Stunning gradient */
             color: #fff;
             text-align: center;
             padding: 180px 20px;
@@ -94,9 +94,15 @@
         }
 
         @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         header h1 {
@@ -104,6 +110,7 @@
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 10px;
+            color: #fff;
         }
 
         header p {
@@ -113,7 +120,7 @@
 
         header .cta-button {
             display: inline-block;
-            background: #1E90FF;
+            background: #1E90FF; /* Button color */
             color: #1b1b1b;
             padding: 12px 30px;
             border-radius: 30px;
@@ -125,7 +132,23 @@
 
         header .cta-button:hover {
             transform: translateY(-5px);
-            background: #20B2AA;
+            background: #20B2AA; /* Hover color */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.8));
+            z-index: 0;
+        }
+
+        header .content {
+            position: relative;
+            z-index: 1;
         }
 
         /* Section Titles */
@@ -137,65 +160,8 @@
             color: #1E90FF; /* Blue color for section titles */
         }
 
-
-        /* Experience Section */
-        #experience {
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #252525, #525252);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .experience-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .experience-card {
-            background: #333;
-            color: #fff;
-            width: 500px;
-            height: 550px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #1E90FF;
-        }
-
-        .experience-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #b0b0b0;
-        }
-        .experience-card img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-            width: 400px;
-            height: 300px;
-            border-radius: 25px;
-            /* object-fit: cover; */
-            margin-bottom: 10px;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
- /* About Section */
- #about {
+        /* About Section */
+        #about {
             padding: 60px 40px;
             background: linear-gradient(135deg, #252525, #333333); /* Subtle gradient */
             text-align: center;
@@ -453,7 +419,6 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -482,22 +447,7 @@
             <li><img src="https://img.freepik.com/free-vector/programmer-working-flat-style_52683-15041.jpg?t=st=1735496172~exp=1735499772~hmac=889c3398d8faf5406a66949c3899a56ec07c63ac87ac430f1b93816ce6dc8165&w=740" alt="Python"> Python</li>
             <li><img src="https://img.freepik.com/free-photo/ai-technology-microchip-background-futuristic-innovation-technology-remix_53876-124727.jpg?t=st=1735496282~exp=1735499882~hmac=c6b7c72cb1ee871639aec5ebcbc02d4d54a50a3df1e5e3ccaa2adf8ad51d4a42&w=996" alt="Generative AI"> Generative AI</li>
             <li><img src="https://img.freepik.com/free-photo/person-front-computer-working-html_23-2150040428.jpg?t=st=1735496360~exp=1735499960~hmac=12eda084173c820c9b748a1435c688d1e92e6608512ea574e1badb4d95a59891&w=996" alt="Web Development"> Web Development</li>
-        </ul>    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-cards">
-            <div class="experience-card">
-                <img src="https://media.licdn.com/dms/image/v2/D562DAQFUeSVNiMK2pg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1735967314728?e=1736575200&v=beta&t=RoX50LRENWGRelPLZgvCSX_gLrqm-bgkR0ymCv_7Iic" alt="">
-                <h3>Advanced Data Analysis</h3>
-                <p>Proficient in performing complex data analysis, extracting insights, and presenting actionable recommendations.</p>
-            </div>
-            <div class="experience-card">
-                <img src="https://media.licdn.com/dms/image/v2/D562DAQEYgSf6wqAbVQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1734457696589?e=1736575200&v=beta&t=jkkYPpNVkU0hkLHN4FCtWHrthvuum8oc0JtuPPSIkRo" alt="">
-                <h3>Advanced Machine Learning & Generative AI</h3>
-                <p>Skilled in building machine learning models and developing generative AI solutions for various applications.</p>
-            </div>
-        </div>
+        </ul>
     </section>
 
     <section id="projects">
@@ -518,10 +468,10 @@
                 <h3>AI-Powered Code Review Assistant</h3>
                 <p>An AI-powered code review assistant that analyzes code for bugs, optimizations, and improvements in multiple programming languages.</p>
             </div>
-        </div></section>
+        </div>
+    </section>
 
     <section id="contact">
-        
         <h2>Contact Me</h2>
         <p>If you'd like to get in touch or collaborate, feel free to reach out using the form below.</p>
         <form action="https://formspree.io/f/{form_id}" method="POST">
@@ -529,8 +479,10 @@
             <input type="email" name="_replyto" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
-        </form></section>
+        </form>
+    </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Kamalakar Majji | <a href="mailto:kamalakarmajji5683@gmail.com">kamalakarmajji5683@gmail.com</a></p>
         <p>Connect with me on <a href="https://www.linkedin.com/in/majji-kamalakar/" target="_blank">LinkedIn</a> and <a href="https://github.com/kamalakar5683" target="_blank">GitHub</a>.</p>
